@@ -2,7 +2,7 @@ const Posts = [
     {title:'this is 1 title',body:'this is the 1st body'},
     {title:'this is 2 title',body:'this is the 2st body'}
 ]
-async function getpost() {
+function getpost() {
     setTimeout(() => {
         output = '';
         for(let i=0;i<Posts.length;i++){
@@ -12,7 +12,7 @@ async function getpost() {
     },1000);
 
 }
-async function createpost(post){
+function createpost(post){
     const createpost = new Promise((resolve,reject) => {
         setTimeout(() => {
             Posts.push(post);
@@ -26,5 +26,9 @@ async function createpost(post){
     })
     
 }
-createpost({title:'this is 4th posty',body:'this is the body of '}).then(getpost);
+async function init() {
+    createpost[{title:'this is 4th posty',body:'this is the body of '}];
+    getpost();
+}
+init();
 
